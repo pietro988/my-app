@@ -1,24 +1,46 @@
 package com.example.application.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
-public class Misurazione extends AbstractEntity {
+public class Misurazione {
 
-    private Integer idSensore;
-    private Integer potenzaConsumata;
+    @Id
+    private Integer id;
+    private Integer consumo;
 
-    public Integer getIdSensore() {
-        return idSensore;
+    private Date data;
+
+    public Misurazione(int id, int consumo, Date data) {
+        this.id = id;
+        this.consumo = consumo;
+        this.data = data;
     }
-    public void setIdSensore(Integer idSensore) {
-        this.idSensore = idSensore;
+
+    public Misurazione() {
+
     }
-    public Integer getPotenzaConsumata() {
-        return potenzaConsumata;
+
+    public Integer getId() {
+        return id;
     }
-    public void setPotenzaConsumata(Integer potenzaConsumata) {
-        this.potenzaConsumata = potenzaConsumata;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public Integer getConsumo() {
+        return consumo;
+    }
+    public void setConsumo(Integer consumo) {
+        this.consumo = consumo;
+    }
+
+    public Date getDate() {
+        return data;
+    }
+    public void setDate(Date data) {
+        this.data = data;
     }
 
 }
